@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decisions and Actions at the Trowel's Edge</title>
+<link rel="stylesheet" href="style.css?v=2">
+
+</head>
+<body>
+<div id="app"></div>
+<button class="theme-toggle no-print" id="themeToggleBtn" onclick="toggleTheme()">dark mode</button>
+
+<script>
+  /* Set the toggle button's initial label to match system preference,
+     before the button is visible to the user. No stored preference
+     exists (offline-safe), so system preference is the only signal. */
+  (function() {
+    var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (prefersDark) {
+      var btn = document.getElementById("themeToggleBtn");
+      if (btn) btn.textContent = "light mode";
+    }
+  })();
+</script>
+<script src="script.js?v=3"></script>
+
+</body>
+</html>

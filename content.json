@@ -1,0 +1,619 @@
+{
+  "SOURCES": {
+    "fig": "Batist et al. 2021, \u201cFigurations of Digital Practice, Craft, and Agency in Two Mediterranean Fieldwork Projects,\u201d Open Archaeology 7.",
+    "inf": "Batist 2024, \u201cOn the Value of Informal Communication in Archaeological Data Work,\u201d Open Archaeology 10.",
+    "loc": "Batist 2025, \u201cLocating Creative Agency in Archaeological Data Work,\u201d zackbatist.info/locating-creative-agency.",
+    "fuz": "Batist n.d., \u201cBalancing Situated and Objective Representations in Archaeological Fieldwork,\u201d Advances in Archaeological Practice 13(4).",
+    "dtp": "Batist n.d., \u201cData, Technology, and the Politics of Archaeological Practice.\u201d"
+  },
+  "SCENARIOS": {
+    "context": {
+      "title": "Is This a New Stratigraphic Unit?",
+      "src": "Batist n.d., \u201cBalancing Situated and Objective Representations in Archaeological Fieldwork,\u201d Advances in Archaeological Practice 13(4).",
+      "start": "c1",
+      "nodes": {
+        "c1": {
+          "label": "the trench",
+          "body": "<p>You're an assistant on an excavation. You've been digging the same stratigraphic unit for two days. Then something changes: the texture shifts, the colour edges toward red, and a scatter of big boulders that had bordered you on one side just isn't there anymore.</p>\n      <p>You're fairly sure this represents something. You're not sure what, or how sure \"fairly sure\" should be.</p>",
+          "diagram": {
+            "interactive": "soil-blend",
+            "caption": "There's no fixed colour to look up here. What reads as brown, grey, or red-brown shifts with the angle, the light, and which patch you're looking at."
+          },
+          "choices": [
+            {
+              "text": "Call your supervisor over immediately",
+              "to": "c2"
+            },
+            {
+              "text": "Keep digging a little more first, to see if it firms up",
+              "to": "c_wait"
+            }
+          ]
+        },
+        "c_wait": {
+          "label": "digging on",
+          "body": "<p>You dig another ten centimetres. The pattern doesn't resolve into anything cleaner; if anything it's now ambiguous in a new way, since you've disturbed the boundary you were trying to characterize.</p>\n      <p>You call your supervisor over anyway. You'll just have less certain ground to show her.</p>",
+          "choices": [
+            {
+              "text": "Continue",
+              "to": "c2"
+            }
+          ]
+        },
+        "c2": {
+          "label": "describing it",
+          "body": "<p>Your supervisor gets in the trench with you. She asks what you're seeing. You have a choice about how to say it.</p>",
+          "choices": [
+            {
+              "text": "Describe it precisely, in the site's formal vocabulary, as if you're already certain",
+              "to": "c3_formal"
+            },
+            {
+              "text": "Describe it the way you actually experienced it: gesture, comparison, uncertainty and all",
+              "to": "c3_situated"
+            }
+          ]
+        },
+        "c3_formal": {
+          "label": "speaking like the record already exists",
+          "body": "<p>You try out how it would sound to already be certain.</p>\n      <blockquote class=\"notegroup you\">&ldquo;New unit. Compact silty sediment, reddish-brown, distinct from the loose material above.&rdquo;<cite>you, testing the words</cite></blockquote>\n      <p>It sounds authoritative. It's also not quite what you actually think: you're borrowing the language of a decision that hasn't been made yet.</p>\n      <p>Your supervisor picks up on the mismatch between your confident words and your hesitant tone. She asks you to just show her, instead of telling her.</p>",
+          "choices": [
+            {
+              "text": "Continue",
+              "to": "c3_situated"
+            }
+          ]
+        },
+        "c3_situated": {
+          "label": "showing, not just telling",
+          "body": "<blockquote class=\"notegroup you\">&ldquo;This is like still kind of a dark, dark brown, going into the sand, but it's like really tough, like hard to dig through, kind of. So I think maybe it's just&hellip; And then this is like really light grey, and I thought it was just cuz it had just dried out&hellip; but it's also really hard to dig.&rdquo;<cite>you, in the trench</cite></blockquote>\n      <p>You point, you compare it to the hearth deposit nearby, you gesture at the texture rather than naming it outright. Your supervisor leans in, feels the soil herself, and starts translating what you've shown her into something closer to a decision.</p>",
+          "diagram": {
+            "photo": "images/context_discussion.jpg",
+            "alt": "Annotated transcript of a conversation between a trench assistant and supervisor, with photographs of the supervisor in the trench, translating the assistant's description into a decision about whether to record a new unit.",
+            "caption": "The conversation this scene is built from.",
+            "foldable": true,
+            "foldLabel": "show the actual transcript"
+          },
+          "choices": [
+            {
+              "text": "Continue",
+              "to": "c4"
+            }
+          ]
+        },
+        "c4": {
+          "label": "the decision",
+          "body": "<p>Your supervisor straightens up. She has to decide, on the spot, whether this is worth treating as a new unit, with a new number, a new set of forms, and a pause in the day's momentum, or whether it's just a variation within the one you're already excavating.</p>\n      <blockquote class=\"notegroup\">&ldquo;Yeah, hmm. So the colour here is the same as what you were digging, but the consistency has changed?&rdquo;<cite>supervisor</cite></blockquote>\n      <p>She has three ways she could go.</p>",
+          "choices": [
+            {
+              "text": "She calls it: new unit, new number, full stop",
+              "to": "c5_split"
+            },
+            {
+              "text": "She hedges: treat it as new for now, note the ambiguity, see what develops",
+              "to": "c5_hedge"
+            },
+            {
+              "text": "She lumps it: same unit, just note the variation in the description",
+              "to": "c5_lump"
+            }
+          ]
+        },
+        "c5_split": {
+          "label": "splitting it",
+          "body": "<p>A new unit number is assigned. Fresh forms, a fresh photo, a clean line drawn on the sketch. It reads, from now on, as a clear-cut, confidently identified boundary.</p>\n      <p>Tomorrow, digging into it, the material might turn out to look exactly like what was there yesterday. If it does, there's no clean way to undo the split: the record now permanently shows two units where there may only ever have been one.</p>",
+          "diagram": {
+            "svg": "<svg viewBox=\"0 0 300 160\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"The same soil, now with the boundary the decision drew: a solid, confident line splitting two visually distinct materials.\">\n\n<defs>\n<linearGradient id=\"soil-split-l\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n  <stop offset=\"0%\" stop-color=\"#5A3A26\"/>\n  <stop offset=\"100%\" stop-color=\"#3A2A1F\"/>\n</linearGradient>\n<linearGradient id=\"soil-split-r\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n  <stop offset=\"0%\" stop-color=\"#9C4E2C\"/>\n  <stop offset=\"100%\" stop-color=\"#6B3720\"/>\n</linearGradient>\n</defs>\n<rect x=\"15\" y=\"15\" width=\"135\" height=\"125\" fill=\"url(#soil-split-l)\"/>\n<rect x=\"150\" y=\"15\" width=\"135\" height=\"125\" fill=\"url(#soil-split-r)\"/>\n<rect x=\"15\" y=\"15\" width=\"270\" height=\"125\" fill=\"none\" stroke=\"var(--ink)\" stroke-width=\"1\"/>\n<text x=\"150\" y=\"12\" font-family=\"Courier New,monospace\" font-size=\"8\" fill=\"#F2EDE3\" text-anchor=\"middle\">BOUNDARY DRAWN: SOLID LINE</text>\n<path d=\"M 150 15 L 150 140\" stroke=\"#F2EDE3\" stroke-width=\"2.2\" fill=\"none\"/>\n<text x=\"90\" y=\"80\" font-family=\"Courier New,monospace\" font-size=\"9\" fill=\"#F2EDE3\" text-anchor=\"middle\">unit A</text>\n<text x=\"210\" y=\"80\" font-family=\"Courier New,monospace\" font-size=\"9\" fill=\"#F2EDE3\" text-anchor=\"middle\">unit B</text>\n\n<line x1=\"15\" y1=\"140\" x2=\"285\" y2=\"140\" stroke=\"var(--ink)\" stroke-width=\"1\"/>\n<text x=\"15\" y=\"152\" font-family=\"Courier New,monospace\" font-size=\"7\" fill=\"var(--pencil)\">base of trench</text>\n</svg>",
+            "caption": "Splitting makes the two sides look like genuinely different materials, where the ground itself only shaded gradually."
+          },
+          "choices": [
+            {
+              "text": "See what happens to the record \u2192",
+              "to": "c6"
+            }
+          ]
+        },
+        "c5_hedge": {
+          "label": "hedging",
+          "body": "<blockquote class=\"notegroup\">&ldquo;And then we'll clean up and carry on with&hellip; we can just write in the text that these are the differences. But you know what, after we start to dig it it might change back to something more familiar. And we can just say oh, it's like some kind of differential lens of material within it.&rdquo;<cite>supervisor</cite></blockquote>\n      <p>She assigns the new number anyway, since forms need a number to attach to, but tells you to write the uncertainty directly into the description. Photograph it, change the number, and be careful. The paperwork will look decisive. The intent behind it was anything but.</p>",
+          "diagram": {
+            "svg": "<svg viewBox=\"0 0 300 180\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"The same soil, now with the boundary the decision drew: a dashed, tentative line with a number assigned anyway, over ground that still reads the same on both sides.\">\n\n<defs>\n<linearGradient id=\"soil-hedge-a\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\">\n  <stop offset=\"0%\" stop-color=\"#4A3626\"/>\n  <stop offset=\"45%\" stop-color=\"#6B3720\"/>\n  <stop offset=\"100%\" stop-color=\"#5E4530\"/>\n</linearGradient>\n</defs>\n<rect x=\"15\" y=\"15\" width=\"270\" height=\"125\" fill=\"url(#soil-hedge-a)\"/>\n<rect x=\"150\" y=\"15\" width=\"135\" height=\"125\" fill=\"var(--amber)\" opacity=\"0.16\"/>\n<rect x=\"15\" y=\"15\" width=\"270\" height=\"125\" fill=\"none\" stroke=\"var(--ink)\" stroke-width=\"1\"/>\n<text x=\"150\" y=\"12\" font-family=\"Courier New,monospace\" font-size=\"8\" fill=\"#F3E2C4\" text-anchor=\"middle\">BOUNDARY DRAWN: DASHED, NUMBERED ANYWAY</text>\n<path d=\"M 150 15 L 150 140\" stroke=\"#F3E2C4\" stroke-width=\"1.6\" fill=\"none\" stroke-dasharray=\"6 4\"/>\n<text x=\"90\" y=\"80\" font-family=\"Courier New,monospace\" font-size=\"9\" fill=\"#F2EDE3\" text-anchor=\"middle\">unit A</text>\n<text x=\"210\" y=\"80\" font-family=\"Courier New,monospace\" font-size=\"9\" fill=\"#F2EDE3\" text-anchor=\"middle\">unit B?</text>\n<text x=\"150\" y=\"165\" font-family=\"Courier New,monospace\" font-size=\"7\" fill=\"var(--amber)\" text-anchor=\"middle\">&ldquo;possible differential lens&rdquo;, written in the margin</text>\n\n<line x1=\"15\" y1=\"140\" x2=\"285\" y2=\"140\" stroke=\"var(--ink)\" stroke-width=\"1\"/>\n<text x=\"15\" y=\"152\" font-family=\"Courier New,monospace\" font-size=\"7\" fill=\"var(--pencil)\">base of trench</text>\n</svg>",
+            "caption": "Hedging still draws a line, since a form needs a number, but the ground underneath stays the same colour on both sides."
+          },
+          "choices": [
+            {
+              "text": "See what happens to the record \u2192",
+              "to": "c6"
+            }
+          ]
+        },
+        "c5_lump": {
+          "label": "lumping it",
+          "body": "<p>She decides it's not worth splitting: same unit, note the variation in the free-text description, keep digging. This is faster, and avoids assigning a number to something that might not hold up. It also means that if this variation does turn out to matter later, there's no discrete record of it to search for: it's buried in a paragraph of prose a future analyst would have to read in full to find.</p>",
+          "diagram": {
+            "svg": "<svg viewBox=\"0 0 300 180\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"The same soil, now with the boundary the decision drew: no line at all, the ground reading as one continuous field.\">\n\n<defs>\n<radialGradient id=\"soil-lump-a\" cx=\"35%\" cy=\"35%\" r=\"75%\">\n  <stop offset=\"0%\" stop-color=\"#6B3720\"/>\n  <stop offset=\"55%\" stop-color=\"#4A3626\"/>\n  <stop offset=\"100%\" stop-color=\"#3A2A1F\"/>\n</radialGradient>\n</defs>\n<rect x=\"15\" y=\"15\" width=\"270\" height=\"125\" fill=\"url(#soil-lump-a)\"/>\n<rect x=\"15\" y=\"15\" width=\"270\" height=\"125\" fill=\"none\" stroke=\"var(--ink)\" stroke-width=\"1\"/>\n<text x=\"150\" y=\"12\" font-family=\"Courier New,monospace\" font-size=\"8\" fill=\"#F2EDE3\" text-anchor=\"middle\">NO BOUNDARY DRAWN: ONE UNIT</text>\n<path d=\"M 150 15 Q 158 60 150 95 Q 145 120 155 140\" stroke=\"#F2EDE3\" stroke-width=\"1\" fill=\"none\" stroke-dasharray=\"1 5\" opacity=\"0.4\"/>\n<text x=\"150\" y=\"80\" font-family=\"Courier New,monospace\" font-size=\"9\" fill=\"#F2EDE3\" text-anchor=\"middle\">unit A</text>\n<text x=\"150\" y=\"165\" font-family=\"Courier New,monospace\" font-size=\"7\" fill=\"var(--pencil)\" text-anchor=\"middle\">variation noted only in the free-text description</text>\n\n<line x1=\"15\" y1=\"140\" x2=\"285\" y2=\"140\" stroke=\"var(--ink)\" stroke-width=\"1\"/>\n<text x=\"15\" y=\"152\" font-family=\"Courier New,monospace\" font-size=\"7\" fill=\"var(--pencil)\">base of trench</text>\n</svg>",
+            "caption": "Lumping leaves the ground exactly as blended as it actually was. The variation now exists only as prose."
+          },
+          "choices": [
+            {
+              "text": "See what happens to the record \u2192",
+              "to": "c6"
+            }
+          ]
+        },
+        "c6": {
+          "label": "weeks later \u00b7 the trench report",
+          "end": true,
+          "body": "<div class=\"ending-tag\">end of scene</div>\n      <p>Whatever call was made in the trench, the write-up happens later, by your supervisor, in the project's formal language. The tentativeness of the moment, the hedging, the gesture, the &ldquo;might change back to something more familiar,&rdquo; gets folded into a report that speaks in the settled voice of a finished analysis. It becomes, eventually, one line describing a lithostratigraphic unit, with no trace of who wondered what, out loud, on a specific afternoon.</p>\n      <div class=\"lesson-box\">\n        <div class=\"lb-label\">the report erases the uncertainty</div>\n        <p>You made the observation in the trench. Someone else, working from your notes, decided what it meant and wrote that meaning down as fact. That gap is where the judgment call actually happened, and the final record doesn't show it.</p>\n      </div>",
+          "diagram2": {
+            "photo": "images/context_report.jpg",
+            "alt": "Photograph of an excerpt from a trench report, describing a unit that appeared to change, was assigned a new number, then reverted to the original material a few centimetres down, and was ultimately treated as a continuation of the original unit.",
+            "caption": "The trench report, describing this same situation weeks later.",
+            "foldable": true,
+            "foldLabel": "show the trench report"
+          },
+          "choices": []
+        }
+      }
+    },
+    "database": {
+      "title": "What Goes in the Database?",
+      "src": "Batist 2024, \u201cOn the Value of Informal Communication in Archaeological Data Work,\u201d Open Archaeology 10.",
+      "start": "d1",
+      "nodes": {
+        "d1": {
+          "label": "a folding table under a tarp, at the edge of the site",
+          "body": "<p>You're the database manager. It's the last week of the season, and a stack of recording sheets has landed in front of you, each one filled out by hand, in the field, over the past several days.</p>\n      <p>One sheet has a line with a single word scribbled out and corrected mid-line, kept as the final version:</p>\n      <blockquote class=\"notegroup\">&ldquo;it was <span class=\"scribble-unicode\">\u5f61</span> different from the previous context, less compact.&rdquo;<cite>kept on the recording sheet</cite></blockquote>\n      <p>Below it, a second attempt is struck through entirely and abandoned:</p>\n      <blockquote class=\"notegroup\"><span class=\"strike-wavy\">&ldquo;it was slightly less compact than the previous context.&rdquo;</span><cite>crossed out on the recording sheet</cite></blockquote>\n      <p>Your database has one text field for this.</p>",
+          "diagram": {
+            "photo": "images/crossedout.jpg",
+            "alt": "Photograph of a real recording sheet showing a handwritten line crossed out and rewritten below it.",
+            "caption": "The crossed-out line, photographed from the original sheet."
+          },
+          "choices": [
+            {
+              "text": "Type in only the final, corrected version",
+              "to": "d2"
+            },
+            {
+              "text": "Type in both, with a note that the first was crossed out",
+              "to": "d_both"
+            }
+          ]
+        },
+        "d_both": {
+          "label": "keeping the revision",
+          "body": "<p>You add a note to the record:</p>\n      <blockquote class=\"notegroup\">[originally recorded as something illegible and crossed out, revised in the field to &ldquo;slightly less compact&rdquo;]<cite>your note, added to the database</cite></blockquote>\n      <p>It takes an extra two minutes. It's also the only place in the entire digital record where anyone will ever see that the person in the field changed their mind, and why that might matter for how confidently the description should be trusted.</p>\n      <p>Nobody asked you to do this. Nothing in the data model has a field for it.</p>",
+          "choices": [
+            {
+              "text": "Continue",
+              "to": "d2"
+            }
+          ]
+        },
+        "d2": {
+          "label": "the shorthand",
+          "body": "<p>A separate document in the pile is the project's field notebook table. One entry in it cross-references this unit to another:</p>\n      <blockquote class=\"notegroup\">&ldquo;W OF FEATURE 3 (= 441)&rdquo;<cite>hand written table from field notebook</cite></blockquote>\n      <p>It's shorthand for a real link: this unit sits west of Feature 3, and Feature 3 later turned out to be the same material as unit 441. Your database doesn't have a field built for a cross-reference written this way.</p>\n      <p>You need this to be queryable later. What do you do with it?</p>",
+          "diagram": {
+            "photo": "images/shorthand.jpg",
+            "alt": "Photograph of a hand written table from a field notebook, with unit numbers and shorthand descriptions, including one entry cross-referenced to another feature number.",
+            "caption": "The hand written table from the field notebook this entry comes from."
+          },
+          "choices": [
+            {
+              "text": "Adapt the schema so it has fields for this kind of cross-reference, and enter the unit and feature separately",
+              "to": "d3_standard"
+            },
+            {
+              "text": "Copy the shorthand into the record exactly as written, and flag it for someone to resolve later",
+              "to": "d3_flag"
+            }
+          ]
+        },
+        "d3_standard": {
+          "label": "standardizing",
+          "body": "<p>You add fields for this kind of cross-reference and enter the unit and feature separately. It's now clean, comparable, and instantly queryable alongside every other record. The specific, idiosyncratic way the original note related these two entities, in shorthand, in the order it occurred to whoever wrote it, is gone. What replaces it is correct, but it is your correctness, not theirs.</p>",
+          "choices": [
+            {
+              "text": "Continue",
+              "to": "d4"
+            }
+          ]
+        },
+        "d3_flag": {
+          "label": "flagging it",
+          "body": "<p>You leave the shorthand in place and flag the record for review. It stays a little messy, a little less immediately usable in a query, but it also stays legible as something a specific person wrote, in their own terms, in the field. Whether anyone ever actually resolves the flag before the season ends is an open question.</p>",
+          "choices": [
+            {
+              "text": "Continue",
+              "to": "d4"
+            }
+          ]
+        },
+        "d4": {
+          "label": "the sketch",
+          "body": "<p>The last sheet in the pile has a small pencil sketch on graph paper: no scale beyond the grid itself, no labels except a north arrow, drawn quickly to capture the shape of something in the trench. There's no field in the database for a sketch like this. It doesn't fit any table.</p>",
+          "diagram": {
+            "photo": "images/sketch.jpg",
+            "alt": "Photograph of a real hand-drawn pencil sketch on graph paper, unlabelled except for a north arrow, showing an irregular shape.",
+            "caption": "The sketch, drawn fast, with a north arrow and nothing else."
+          },
+          "choices": [
+            {
+              "text": "Leave it out of the database entirely, it belongs to the paper archive, not here",
+              "to": "d5_drop"
+            },
+            {
+              "text": "Scan it and attach the image file to the record, even though nothing requires you to",
+              "to": "d5_scan"
+            }
+          ]
+        },
+        "d5_drop": {
+          "label": "letting it go",
+          "body": "<p>This is what happens by default, on every project, to every sketch like this. It's not malicious: there's genuinely no field for it, the season is ending, and there are forty more sheets to get through. But the sketch, and whatever spatial intuition it captured, now exists only on a piece of paper in a box, disconnected from the digital record anyone will actually search.</p>\n      <p>Elements like this, sketches, spatial impressions, anything that doesn't map onto a distinct field, tend to get excluded from the database altogether, not through any single decision but through the accumulation of moments exactly like this one.</p>",
+          "choices": [
+            {
+              "text": "See what this scene is about \u2192",
+              "to": "d6"
+            }
+          ]
+        },
+        "d5_scan": {
+          "label": "keeping it anyway",
+          "body": "<p>You scan the sheet and attach the whole image as a file linked to the record. It's not searchable text, and it clutters a data model that was designed for tidy rows and columns, but it survives. Anyone who reads the formal fields later and wants more can open the file and see exactly what the excavator was looking at.</p>",
+          "choices": [
+            {
+              "text": "See what this scene is about \u2192",
+              "to": "d6"
+            }
+          ]
+        },
+        "d6": {
+          "label": "the finished dataset",
+          "end": true,
+          "body": "<div class=\"ending-tag\">end of scene</div>\n      <p>By the end of the week, the database looks clean: consistent fields, controlled vocabulary, no crossed-out text, no shorthand, no stray pencil marks. Anyone downloading it later will have no way of knowing how much of that cleanliness was manufactured, one small judgment call at a time, at a folding table, weeks after the fieldwork happened.</p>\n      <div class=\"lesson-box\">\n        <div class=\"lb-label\">cleaning isn't neutral</div>\n        <p>Every choice you made here was a real judgment about what counts as signal and what counts as noise, made under time pressure. A future researcher trusting this dataset is also, without knowing it, trusting whoever sat at this desk.</p>\n      </div>",
+          "diagram": {
+            "svg": "\n<svg viewBox=\"0 0 300 150\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Comparison of the messy source documents against the finished, clean database table, showing the source rows condensed into uniform table entries.\">\n<text x=\"150\" y=\"14\" font-family=\"Courier New,monospace\" font-size=\"8\" fill=\"var(--pencil)\" text-anchor=\"middle\">source documents (handwritten)</text>\n<rect x=\"15\" y=\"26\" width=\"80\" height=\"34\" fill=\"var(--card-bg)\" stroke=\"var(--soil)\" stroke-width=\"1\"/>\n<text x=\"55\" y=\"42\" font-family=\"Courier New,monospace\" font-size=\"6.5\" fill=\"var(--ink-soft)\" text-anchor=\"middle\">crossed-out text,</text>\n<text x=\"55\" y=\"52\" font-family=\"Courier New,monospace\" font-size=\"6.5\" fill=\"var(--ink-soft)\" text-anchor=\"middle\">shorthand, sketch</text>\n<path d=\"M 130 42 L 170 42\" stroke=\"var(--string)\" stroke-width=\"1.5\" marker-end=\"url(#arrow)\"/>\n<defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"var(--string)\"/></marker></defs>\n<text x=\"150\" y=\"34\" font-family=\"Courier New,monospace\" font-size=\"6.5\" fill=\"var(--string)\" text-anchor=\"middle\">judgment</text>\n<rect x=\"185\" y=\"22\" width=\"105\" height=\"60\" fill=\"var(--card-bg)\" stroke=\"var(--ink)\" stroke-width=\"1\"/>\n<text x=\"237\" y=\"35\" font-family=\"Courier New,monospace\" font-size=\"7\" fill=\"var(--pencil)\" text-anchor=\"middle\">database table</text>\n<line x1=\"192\" y1=\"42\" x2=\"283\" y2=\"42\" stroke=\"var(--line)\" stroke-width=\"0.6\"/>\n<line x1=\"192\" y1=\"54\" x2=\"283\" y2=\"54\" stroke=\"var(--line)\" stroke-width=\"0.6\"/>\n<line x1=\"192\" y1=\"66\" x2=\"283\" y2=\"66\" stroke=\"var(--line)\" stroke-width=\"0.6\"/>\n<text x=\"197\" y=\"50\" font-family=\"Courier New,monospace\" font-size=\"6.5\" fill=\"var(--ink-soft)\">unit, description</text>\n<text x=\"197\" y=\"62\" font-family=\"Courier New,monospace\" font-size=\"6.5\" fill=\"var(--ink-soft)\">unit, description</text>\n<text x=\"197\" y=\"74\" font-family=\"Courier New,monospace\" font-size=\"6.5\" fill=\"var(--ink-soft)\">unit, description</text>\n<text x=\"150\" y=\"105\" font-family=\"Courier New,monospace\" font-size=\"7.5\" fill=\"var(--soil)\" text-anchor=\"middle\">uniform rows, no trace of the</text>\n<text x=\"150\" y=\"120\" font-family=\"Courier New,monospace\" font-size=\"7.5\" fill=\"var(--soil)\" text-anchor=\"middle\">judgment behind it</text>\n</svg>",
+            "caption": "Each source document carried its own small acts of judgment. In the database, they collapse into rows that look the same shape as any other."
+          },
+          "choices": []
+        }
+      }
+    },
+    "weathering": {
+      "title": "Different Material, or Weathering?",
+      "src": "Batist n.d., \u201cData, Technology, and the Politics of Archaeological Practice.\u201d",
+      "start": "w1",
+      "nodes": {
+        "w1": {
+          "label": "the finds table",
+          "body": "<p>You're a lithics analyst, sorting through a tray of stone tools with a colleague who specializes in raw materials. You need to know: is this piece a different kind of stone, or is it the same stone, just weathered?</p>\n      <p>You ask your colleague. She isn't sure either. She turns the piece over, feels the surface, compares it to another piece nearby.</p>\n      <blockquote class=\"notegroup\">&ldquo;I don't know if it's, hmm. I don't know if it's weathered.&rdquo;<cite>colleague</cite></blockquote>\n      <p>Neither of you can point to a rule that settles it. You need a working answer today, because the sorting has to continue.</p>",
+          "choices": [
+            {
+              "text": "Push to define a shared rule in words before sorting further",
+              "to": "w2_rule"
+            },
+            {
+              "text": "Sort by pointing and comparing, without trying to name the rule",
+              "to": "w2_point"
+            }
+          ]
+        },
+        "w2_rule": {
+          "label": "trying to name it",
+          "body": "<p>You ask her to explain what makes a piece read as weathered versus just a different material. She tries.</p>\n      <blockquote class=\"notegroup\">&ldquo;I mean, there are really huge differences. This is slightly rounded, and this is very sharp, and, okay, different raw material as well&hellip; But this is almost the same as that, in terms of, like, texture and surface.&rdquo;<cite>colleague</cite></blockquote>\n      <p>It's not a definition. It's a string of comparisons, each one gesturing at two objects in her hands. Every time you think you have the rule, she points at a counterexample that breaks it.</p>\n      <blockquote class=\"notegroup\">&ldquo;Yes, I don't know. I can't explain it very well.&rdquo;<cite>colleague</cite></blockquote>",
+          "choices": [
+            {
+              "text": "Continue",
+              "to": "w3"
+            }
+          ]
+        },
+        "w2_point": {
+          "label": "sorting by demonstration",
+          "body": "<p>You stop asking her to explain and just start handing her pieces, one at a time, watching where she puts them. She doesn't narrate her reasoning; she just sorts, occasionally pausing to hold two pieces side by side before deciding.</p>\n      <p>It's faster. You're both building a shared sense of the category without ever agreeing on a sentence that describes it.</p>",
+          "choices": [
+            {
+              "text": "Continue",
+              "to": "w3"
+            }
+          ]
+        },
+        "w3": {
+          "label": "building the groups",
+          "body": "<p>You suggest playing it out: sort a small batch into tentative piles, then have her walk through and correct anything that's in the wrong pile. Low stakes, nothing final yet. She flips through one pile for a long pause before saying anything.</p>\n      <blockquote class=\"notegroup\">&ldquo;Okay, this is fresh, is all I can say.&rdquo;<cite>colleague</cite></blockquote>\n      <p>By the end, you have three piles that hold together, more or less. Now you have to decide how this becomes a category in the database, not just a pile on a table.</p>",
+          "choices": [
+            {
+              "text": "Write down the verbal criteria you eventually agreed on, even though they're rough",
+              "to": "w4_criteria"
+            },
+            {
+              "text": "Skip the criteria and just label the piles by pile, trusting the sorting itself",
+              "to": "w4_label"
+            }
+          ]
+        },
+        "w4_criteria": {
+          "label": "writing it down",
+          "body": "<p>You force yourselves to write a sentence: something about surface texture, rounding, and staining, in combination, not any one on its own. It's an approximation of what actually happened at the table, translated into words that will outlive the moment. Anyone using this category later will follow your sentence, not your hands.</p>\n      <p>The sentence will get things wrong at the edges. Some pieces that felt obviously weathered to you won't quite fit the words you chose.</p>",
+          "choices": [
+            {
+              "text": "See what this scene is about \u2192",
+              "to": "w5"
+            }
+          ]
+        },
+        "w4_label": {
+          "label": "trusting the sorting",
+          "body": "<p>You label the piles as Group A, B, and C, and note that the grouping was done jointly by two analysts through direct comparison, no formal criteria recorded. It's honest about what actually happened. It also means nobody who wasn't at the table that day can apply the category themselves: they'd have to re-sort from scratch, or just trust your grouping without understanding it.</p>",
+          "choices": [
+            {
+              "text": "See what this scene is about \u2192",
+              "to": "w5"
+            }
+          ]
+        },
+        "w5": {
+          "label": "the dataset, later",
+          "end": true,
+          "body": "<div class=\"ending-tag\">end of scene</div>\n      <p>Whichever path you took, a category now exists in the dataset: weathered, or not. It will be used to count things, to compare assemblages, to support or undercut someone else's argument about the site.</p>\n      <div class=\"lesson-box\">\n        <div class=\"lb-label\">what a category can't hold</div>\n        <p>What let you sort correctly in the moment lived in comparison and touch, built between two people over a tray of stones. What survives is a word. Anyone applying that word later inherits the category without the hands that made it.</p>\n      </div>",
+          "choices": []
+        }
+      }
+    },
+    "hearth": {
+      "title": "An Informal Read from a Visiting Specialist",
+      "src": "Batist n.d., \u201cData, Technology, and the Politics of Archaeological Practice.\u201d",
+      "start": "h1",
+      "nodes": {
+        "h1": {
+          "label": "a trench with a confusing hearth",
+          "body": "<p>You're the trench supervisor. For days, your team has been puzzling over a feature that looks like hearth activity but doesn't quite behave like one. The stratigraphy is hard to read, and your own specialist hasn't had time to examine it closely.</p>\n      <p>A visiting micromorphology specialist happens to be on site for a day. You could ask him to take a quick, informal look.</p>",
+          "choices": [
+            {
+              "text": "Ask him for an ad-hoc read, right there in the trench",
+              "to": "h2_ask"
+            },
+            {
+              "text": "Wait for your own project specialist to have time, even if that means weeks of delay",
+              "to": "h2_wait"
+            }
+          ]
+        },
+        "h2_wait": {
+          "label": "waiting it out",
+          "body": "<p>You hold off. Your team keeps excavating around the feature cautiously, unsure how to interpret it, recording everything but committing to no firm story. Three weeks later your own specialist finally gets to it and offers a careful, fully worked-up interpretation, grounded in slides and lab analysis, not a five-minute look in the field.</p>\n      <p>It's more rigorous. It also arrives too late to shape how the surrounding sediment was excavated in the meantime: those choices already got made, on a guess.</p>",
+          "choices": [
+            {
+              "text": "Continue",
+              "to": "h3"
+            }
+          ]
+        },
+        "h2_ask": {
+          "label": "the informal read",
+          "body": "<p>The visiting specialist crouches at the section, turns a handful of sediment over in his fingers, and starts talking.</p>\n      <blockquote class=\"notegroup\">&ldquo;This sand is de-calcified&hellip; the guys came and put fire&hellip; Of course we don't see any more ashes because they have been dissolved away.&rdquo;<cite>visiting specialist</cite></blockquote>\n      <p>He offers a whole interpretation, on the spot, from experience and instinct rather than lab analysis. It sounds plausible. It also isn't official; nobody's asked him to write anything down, and he won't be here tomorrow.</p>",
+          "choices": [
+            {
+              "text": "Continue",
+              "to": "h3"
+            }
+          ]
+        },
+        "h3": {
+          "label": "what to do with the read",
+          "body": "<p>Whether it came now or in three weeks, you have an interpretation in hand. You have to decide how much weight it carries in what actually gets excavated and recorded next.</p>",
+          "choices": [
+            {
+              "text": "Adopt the interpretation and excavate accordingly, treating it as settled",
+              "to": "h4_adopt"
+            },
+            {
+              "text": "Use it to guide excavation informally, but keep the official record hedged until your own specialist confirms it",
+              "to": "h4_hedge"
+            },
+            {
+              "text": "Set it aside entirely until it can be formally verified, even if that slows the excavation",
+              "to": "h4_setaside"
+            }
+          ]
+        },
+        "h4_adopt": {
+          "label": "treating it as settled",
+          "body": "<p>You shift the whole trench's excavation strategy around the reading: this is a hearth, this is where the fire sat, this is the sequence. It's efficient, and it lets the team move fast with confidence. If the read turns out to be wrong, though, you'll have excavated through evidence that might have supported a different story, and there's no way to redo that.</p>",
+          "choices": [
+            {
+              "text": "See what this scene is about \u2192",
+              "to": "h5"
+            }
+          ]
+        },
+        "h4_hedge": {
+          "label": "using it without formalizing it",
+          "body": "<p>You let the interpretation shape where you dig next, but you keep the trench report's language cautious: possible hearth, informally assessed, pending confirmation. It's the messier option administratively, but it protects you from having committed the permanent record to a read that was never meant to be final.</p>\n      <p>Your own specialist, when she eventually arrives, will have to work out for herself how much to trust a colleague's five-minute impression versus building her own case from scratch.</p>",
+          "choices": [
+            {
+              "text": "See what this scene is about \u2192",
+              "to": "h5"
+            }
+          ]
+        },
+        "h4_setaside": {
+          "label": "waiting for confirmation",
+          "body": "<p>You thank the visiting specialist, note his impressions privately, and hold off on changing anything about the excavation strategy until your own specialist can weigh in properly. It costs you time and momentum. It also means the eventual record won't carry the trace of an outsider's one-off visit shaping a decision nobody can fully retrace.</p>",
+          "choices": [
+            {
+              "text": "See what this scene is about \u2192",
+              "to": "h5"
+            }
+          ]
+        },
+        "h5": {
+          "label": "who got to decide",
+          "end": true,
+          "body": "<div class=\"ending-tag\">end of scene</div>\n      <p>A visiting consultant's read is a strange kind of authority: expert, but informal; confident, but not accountable to the project the way a permanent team member is. They can say things a resident specialist might hedge on, precisely because they won't be the one living with the consequences if they're wrong.</p>\n      <div class=\"lesson-box\">\n        <div class=\"lb-label\">certainty without stake</div>\n        <p>People furthest from a project's long-term consequences can sometimes afford the most confidence. Whether that confidence deserves the weight it carries is a separate question from how far it actually travels into the record.</p>\n      </div>",
+          "choices": []
+        }
+      }
+    }
+  },
+  "ROLEPLAYS": {
+    "journals": {
+      "title": "Publish the Field Journals?",
+      "src": "Batist 2024, \u201cOn the Value of Informal Communication in Archaeological Data Work,\u201d Open Archaeology 10.",
+      "about": "<p>This module is built around a single episode described in research on archaeological data work: a long-running excavation's director died, and her successor, facing pressure to make the project's records openly accessible, wanted to publish the project's internal field journals, records never intended for readers outside the team. Former participants pushed back, and the dispute nearly reached the point of legal action. No one involved could fully articulate, in a single sentence, what exactly would be lost. The research doesn't record how it was resolved.</p>",
+      "premise": "<p>A long-running excavation trained several generations of archaeologists. Its director has recently died, after decades of steering the project and shaping how generations of her students think about the work. Her successor, facing pressure to make the project's records openly accessible, wants to publish the project's archive, including its internal field journals, which were written for the team, not for outside readers.</p>\n  <p>Some former participants push back. Nobody involved can quite articulate, in a sentence, exactly what would be lost.</p>",
+      "diagram": {
+        "photo": "images/journal_bouldery.jpg",
+        "alt": "Photograph of an archaeological field journal spread: a handwritten narrative entry about clearing a trench, facing a rough pencil sketch of the trench section labelled 'bouldery hell.'",
+        "caption": "The kind of record at stake: a spread from a field journal, narrating the day's work in a private shorthand the excavator understood and no one else was expected to."
+      },
+      "question": "Should the journals be published?",
+      "roles": [
+        {
+          "name": "The Successor Director",
+          "stance": "For publication",
+          "desc": "You inherited the project and its funding obligations. Open-access expectations aren't optional anymore, and the journals may hold real value for future research. You also suspect some of the resistance is about protecting reputations, not principles.",
+          "prompts": [
+            "What do you actually owe your funders versus your predecessor's old team?",
+            "Is there a version of \u2018open\u2019 that isn't all-or-nothing?"
+          ]
+        },
+        {
+          "name": "A Former Trench Supervisor, now a professor",
+          "stance": "Against publication",
+          "desc": "You spent your twenties on this project. Your journal has half-formed ideas, complaints about colleagues, jokes that don't read well decades later. You trusted that it would stay internal. That trust is the thing being broken, not a policy.",
+          "prompts": [
+            "Is there a difference between a record being lost and a record being betrayed?",
+            "What would make you comfortable with a compromise?"
+          ]
+        },
+        {
+          "name": "A Data Curation Specialist",
+          "stance": "Procedural, for structured access",
+          "desc": "You don't have a strong stake in the outcome, but you know that \u201cpublish everything\u201d and \u201cpublish nothing\u201d are both bad data management. You want to know: access for whom, under what conditions, reviewed by whom first?",
+          "prompts": [
+            "What would a middle path actually look like in practice?",
+            "Who should decide what counts as sensitive in someone else's field journal?"
+          ]
+        },
+        {
+          "name": "An Early-Career Researcher",
+          "stance": "For publication, self-interested",
+          "desc": "You want to reuse this data for your own dissertation and you're frustrated that a small circle of insiders is gatekeeping information that could genuinely advance the field. You didn't get the personal, insider relationship with this project that the older generation had.",
+          "prompts": [
+            "Does wanting access change whether you're entitled to it?",
+            "What do you lose as a re-user if the journals get published stripped of context?"
+          ]
+        },
+        {
+          "name": "The Late Director, in absentia",
+          "stance": "Unknown, argued by the group",
+          "desc": "Nobody can ask her. Different people in the room will claim to know what she would have wanted, and they will disagree. Assign someone to voice these competing claims rather than a single fixed position.",
+          "prompts": [
+            "Whose memory of her gets treated as authoritative?",
+            "Does it matter what she would have wanted, or only what she's owed now?"
+          ]
+        }
+      ],
+      "debrief": "<p>There's no scripted resolution to this one, because the dispute this is drawn from didn't have one on record either. Push the group to land somewhere, even a messy compromise, and then ask:</p>\n  <ul>\n    <li>Field journals are informal by design. That informality is what makes them valuable as records of genuine reasoning. Does publishing them destroy the very thing that made them worth having?</li>\n    <li>Who actually gets to decide what one person's private working notes mean, once that person is no longer alive to say?</li>\n    <li>Is this a data-sharing question at all, or is it more about labour, trust, and collaboration?</li>\n  </ul>"
+    },
+    "craft": {
+      "title": "Craft vs. Workflow",
+      "src": "Batist et al. 2021, \u201cFigurations of Digital Practice, Craft, and Agency in Two Mediterranean Fieldwork Projects,\u201d Open Archaeology 7.",
+      "about": "<p>This module draws on interviews with two archaeological survey projects that differ sharply in how they approach digital tools. One resists digital workflows and records everything by hand, in the name of what its members call &ldquo;craft.&rdquo; The other has built custom digital tools, photogrammetry (turning overlapping photographs into 3D models of a site) and GIS (geographic information systems, for mapping and spatial analysis), and considers that its own form of expertise. Neither project thinks the other is doing bad archaeology; each has made a values trade-off the other wouldn't make.</p>",
+      "premise": "<p>Two excavation projects, side by side. One (call it the Slow Project) records everything by hand, in pen and paper, deliberately resisting digital workflows in the name of what its people call &ldquo;craft.&rdquo; The other (call it the Digital Project) has built its own digital tools for turning field photographs into 3D site models and for mapping and analyzing spatial data, and takes pride in that work.</p>\n  <p>Both projects are led by thoughtful archaeologists. Neither side thinks the other is doing bad archaeology. They think the other side has made a trade-off they wouldn't make themselves.</p>\n  <ul>\n    <li>The Slow Project's director argues that digital workflows push data toward ever-finer granularity as a matter of course, and that fine-grained categories aren't how good archaeological arguments actually get built.</li>\n    <li>He also argues that digital tools shape data collection around their own logic. How they're built to organize information ends up steering the kind of work people do, not just recording it.</li>\n  </ul>",
+      "question": "Should the Slow Project adopt the Digital Project's tools?",
+      "roles": [
+        {
+          "name": "Slow Project Director",
+          "stance": "Pen and paper, deliberately",
+          "desc": "You believe fine-grained digital workflows push researchers toward fragmented thinking that doesn't match how good archaeological arguments actually get built. You'd rather have students spend years learning to really see a landscape than learning a piece of software.",
+          "prompts": [
+            "Is craft actually available to everyone, or only to those with time and funding to spend years somewhere?",
+            "What's the difference between resisting a bad workflow and just resisting change?"
+          ]
+        },
+        {
+          "name": "Slow Project Trench Supervisor",
+          "stance": "Practical, budget-driven",
+          "desc": "You've heard the romantic version of why your project uses paper instead of tablets. You suspect the more mundane reason was cost. You're not sure the philosophy came first or the budget did.",
+          "prompts": [
+            "Does it matter whether a principle was the original reason or a story added afterward?",
+            "What would you actually want if cost weren't a factor?"
+          ]
+        },
+        {
+          "name": "Digital Project Co-Director",
+          "stance": "Photogrammetry and GIS as craft",
+          "desc": "You built your project's 3D-modeling and mapping tools yourself, refining them season after season as you learned what the site actually needed. You don't think what you do is the opposite of craft. You think it is craft, just expressed through code and hardware instead of a trowel.",
+          "prompts": [
+            "Can deep technical mastery of a tool be its own form of embodied knowledge?",
+            "What's lost when a student learns your workflow secondhand instead of building it themselves?"
+          ]
+        },
+        {
+          "name": "Digital Project Junior Team Member",
+          "stance": "Learning the tools, some doubts",
+          "desc": "You were taught to follow the workflow, not to understand why it's built the way it is. You're good at using the mapping software. You're honestly not sure you'd know how to think about the site without it.",
+          "prompts": [
+            "Is that a loss, or just what specialization looks like?",
+            "What would you need in order to feel like more than a component in someone else's system?"
+          ]
+        },
+        {
+          "name": "A Grant Program Officer",
+          "stance": "Neutral, outcome-focused",
+          "desc": "You don't care about either side's philosophy. You care whether the resulting archaeological knowledge is trustworthy, reusable, and produced without exploiting the people who make it.",
+          "prompts": [
+            "Can you actually evaluate that without taking a side on craft versus workflow?",
+            "What would you want to see documented from either project that neither currently records?"
+          ]
+        },
+        {
+          "name": "A Future Data Reuser",
+          "stance": "Neither project's target audience",
+          "desc": "You're a researcher years from now trying to reuse whatever either project left behind. The Slow Project has detailed field journals nobody digitized. The Digital Project has a clean database with no record of the judgment calls behind it.",
+          "prompts": [
+            "Which dataset would actually serve you better, and why?",
+            "What would you ask either project's director to have done differently, if you could?"
+          ]
+        }
+      ],
+      "debrief": "<p>The research this is drawn from found the two projects couldn't be sorted into simple heroes and villains. People who design workflows see things differently from those who just use them, and craft itself depends on time and resources that aren't equally available to everyone. Push toward specifics rather than a verdict:</p>\n  <ul>\n    <li>Whose creative agency increases and whose decreases under each approach, not archaeology's in the abstract, but specific people in the room?</li>\n    <li>Is craft or workflow describing a real methodological difference here, or is it sometimes a story told afterward to justify a choice made for other reasons, like budget, habit, or personality?</li>\n    <li>However either project records its data, someone still has to decide what counts and what doesn't. Does either philosophy actually solve that problem, or just relocate it?</li>\n  </ul>"
+    }
+  },
+  "ABOUT": {
+    "intro": "This project turns published studies of archaeological fieldwork into playable scenes. It draws on fieldwork conducted between 2017 and 2019 at several archaeological excavations, along with two comparative survey projects in the Eastern Mediterranean, combining direct observation, interviews, and analysis of the recording sheets, databases, and reports the projects produced. The people in these scenes are pseudonyms used in the original research, kept to protect participants' identities, and the dialogue in quoted boxes is drawn directly or closely paraphrased from interview transcripts and field notes. Where a scene branches beyond what was directly observed, it stays close to the patterns the research documents, so a wrong turn still teaches something true about how data work actually happens.",
+    "beyond_archaeology": [
+      "The pattern in these scenes isn't specific to trenches and pottery. Producing stable, shareable records tends to mean characterizing what happened in clean, formal terms while setting aside the situated, improvised experience that actually produced them. That trade-off shows up anywhere data gets collected by people working under real conditions: a lab notebook, a clinical trial, a field survey, a sensor log someone had to calibrate by hand.",
+      "It also has direct consequences for sharing, combining, and reusing data later. People who reuse a dataset consistently want to know more than the formal record captures: the context behind how it was made. That context is usually the first thing to get lost, because there's rarely a field for it. Effective data sharing seems to depend on some ongoing conversation between the people who produce data and the people who reuse it, not just on making files available. None of that is a reason to abandon standardized, structured records: they're often genuinely necessary. But treating them as if they were self-evidently objective, instead of one useful representation among others, makes it harder to ask what's been left out, and harder to build the kind of trust that reuse actually depends on."
+    ],
+    "bibliography": [
+      {
+        "html": "Batist, Zachary. 2023. <em>Archaeological data work as continuous and collaborative practice</em>. PhD thesis, University of Toronto. <a href=\"https://hdl.handle.net/1807/130306\" target=\"_blank\" rel=\"noopener\">hdl.handle.net/1807/130306</a>."
+      },
+      {
+        "html": "Batist, Zachary, Val Masters, Tiffany C. Torma, Michael Carter, Neal Ferris, Isto Huvila, Seamus Ross, and Costis Dallas. 2021. \u201cFigurations of Digital Practice, Craft, and Agency in Two Mediterranean Fieldwork Projects.\u201d <em>Open Archaeology</em> 7 (1): 1731\u20131755. <a href=\"https://doi.org/10.1515/opar-2020-0217\" target=\"_blank\" rel=\"noopener\">doi.org/10.1515/opar-2020-0217</a>."
+      },
+      {
+        "html": "Batist, Zachary. 2024. \u201cOn the Value of Informal Communication in Archaeological Data Work.\u201d <em>Open Archaeology</em> 10 (1): 20240014. <a href=\"https://doi.org/10.1515/opar-2024-0014\" target=\"_blank\" rel=\"noopener\">doi.org/10.1515/opar-2024-0014</a>."
+      },
+      {
+        "html": "Batist, Zachary. 2025. \u201cLocating Creative Agency in Archaeological Data Work.\u201d <a href=\"https://zackbatist.info/locating-creative-agency\" target=\"_blank\" rel=\"noopener\">zackbatist.info/locating-creative-agency</a>."
+      },
+      {
+        "html": "Batist, Zachary. n.d. \u201cBalancing Situated and Objective Representations in Archaeological Fieldwork.\u201d <em>Advances in Archaeological Practice</em> 13 (4): 514\u2013527. <a href=\"https://doi.org/10.1017/aap.2025.10101\" target=\"_blank\" rel=\"noopener\">doi.org/10.1017/aap.2025.10101</a>."
+      },
+      {
+        "html": "Batist, Zachary. In press. \u201cData Management Is People Management: On Abstraction of Data and Labour in Archaeological Projects.\u201d <a href=\"https://zackbatist.info/data-tech-poli-arch\" target=\"_blank\" rel=\"noopener\">zackbatist.info/data-tech-poli-arch</a>."
+      }
+    ],
+    "author_link": "Visit <a href=\"https://zackbatist.info\" target=\"_blank\" rel=\"noopener\">zackbatist.info</a> for more of the author's writing on archaeological data, open science, and research infrastructure.",
+    "headings": {
+      "main": "About this project",
+      "beyond_archaeology": "Beyond archaeology",
+      "bibliography": "Bibliography"
+    }
+  }
+}
