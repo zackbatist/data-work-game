@@ -480,7 +480,7 @@
           ]
         },
         {
-          "name": "A Former Trench Supervisor, now a professor",
+          "name": "<span class=\"allow-break\">A Former Trench Supervisor,<br>now a professor</span>",
           "stance": "Against publication",
           "desc": "You spent your twenties on this project. Your journal has half-formed ideas, complaints about colleagues, jokes that don't read well decades later. You trusted that it would stay internal. That trust is the thing being broken, not a policy.",
           "prompts": [

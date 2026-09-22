@@ -261,6 +261,7 @@
   /* ---------- Cards / menu ---------- */
   .menu-grid {
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1rem;
     margin-top: 1.5rem;
   }
@@ -526,12 +527,20 @@
     .role-grid {
       display: block;
     }
+    /* Height is intentionally NOT fixed: some browsers' print/PDF
+       pipelines don't honour overflow:hidden on a fixed-height
+       inline-block the way screen rendering does, which silently
+       let content overflow past the card's edge with no clipping
+       and no warning. Letting height grow to fit content is the
+       reliable option; a printed border marks each card's edge for
+       cutting instead of crop marks calibrated to a height that
+       can't be guaranteed. */
     .role-card {
-      width: 3.5in;
-      height: 2.5in;
+      width: 5in;
+      height: 3in;
       overflow: hidden;
       border: none;
-      padding: 0.22in 0.26in;
+      padding: 0.2in 0.18in;
       margin: 0.18in 0.22in 0.18in 0.22in;
       break-inside: avoid;
       page-break-inside: avoid;
@@ -542,42 +551,47 @@
       background: white;
     }
     .role-card h4 {
-      font-size: 11.5pt;
+      font-size: 13.5pt;
       font-weight: 700;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.02em;
+      line-height: 1.12;
       color: black;
-      border-bottom: 1pt solid black;
+      border-bottom: 1.2pt solid black;
       padding-bottom: 0.05in;
       margin-bottom: 0.09in;
+      white-space: nowrap;
     }
-    .role-card p, .role-card li { font-size: 8pt; line-height: 1.3; color: black; }
+    /* This one title is intentionally allowed to break \u2014 forced onto
+       two lines at the comma via a <br> in the source text \u2014 since it
+       doesn't fit on one line at any reasonable size. white-space must
+       be reset to normal here, or the <br> itself gets suppressed. */
+    .role-card h4 .allow-break {
+      white-space: normal;
+    }
+    .role-card p, .role-card li { font-size: 9.5pt; line-height: 1.26; color: black; }
+    .role-card p { margin: 0 0 0.1in; }
+    .role-card ul {
+      margin: 0;
+      padding-left: 0;
+      list-style-position: outside;
+    }
+    .role-card li {
+      margin-left: 0.13in;
+      padding-left: 0.02in;
+      margin-bottom: 0.05in;
+      text-wrap: balance;
+    }
     .role-card .role-position {
-      font-size: 8.5pt;
+      font-size: 11pt;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
       color: black !important;
-    }
-    /* Corner crop marks: two short black lines per corner, offset
-       just outside the card's edge, in the standard printer's-mark
-       style. Cutting along the outer tip of each pair leaves a clean
-       3.5x2.5in card with no mark residue on the finished card. */
-    .crop-mark {
+      margin-bottom: 0.05in;
       display: block;
-      position: absolute;
-      background: black;
-      pointer-events: none;
+      white-space: nowrap;
     }
-    .crop-mark.h { width: 0.12in; height: 0.5pt; }
-    .crop-mark.v { width: 0.5pt; height: 0.12in; }
-    .crop-mark.tl.h { top: -0.02in; left: -0.14in; }
-    .crop-mark.tl.v { top: -0.14in; left: -0.02in; }
-    .crop-mark.tr.h { top: -0.02in; right: -0.14in; }
-    .crop-mark.tr.v { top: -0.14in; right: -0.02in; }
-    .crop-mark.bl.h { bottom: -0.02in; left: -0.14in; }
-    .crop-mark.bl.v { bottom: -0.14in; left: -0.02in; }
-    .crop-mark.br.h { bottom: -0.02in; right: -0.14in; }
-    .crop-mark.br.v { bottom: -0.14in; right: -0.02in; }
+    .crop-mark { display: none; }
   }
 
   @media (max-width: 480px) {
